@@ -1,0 +1,112 @@
+/* setting the default margin and padding to all elements to 0 */
+/* setting the size of all elements to include the content box + padding + margin*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* declaring variables for colors on the document*/
+:root {
+--white: hsla(0, 0%, 100%, 100%);
+--light-gray: hsla(212, 45%, 89%, 100%);
+--grayish-blue: hsla(220, 15%, 55%, 100%);
+--dark-blue: hsla(218, 44%, 22%, 100%);
+}
+
+/* import the Outfit font from `https://fonts.google.com/specimen/Outfit` - only the 400 & 700 weights will be used */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* style to be applied to the body element */
+body {
+  background-color: var(--light-gray);
+  font-family: "Outfit", sans-serif;
+  font-weight: 400; 
+}
+
+/* the container with 'id=container' has a 'display' property value of 'flexbox' */
+/* the container will display the 'flex-items' in a vertical layout */
+#container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  width: 320px;
+  height: 497px;
+  border-radius: 20px;
+  row-gap: 1.5rem;
+  box-shadow: 0px 25px 25px 0px hsla(0, 0%, 0%, 0.047);
+
+  /* media queries used to adjust the top margin of the container depending on the width of the device*/
+  @media (max-width: 375px) {
+    margin: 5.3125rem auto 0 auto;
+  }
+
+  @media (min-width: 376px) and (max-width: 768px) {
+    margin: 12rem auto 0 auto;
+  }
+
+  @media (min-width: 769px) {
+    margin: 9.5rem auto 0 auto;
+  }
+}
+
+/* use the 'background-image' property to insert the QR code image */
+#image-qr-code {
+  background-image: url("./images/image-qr-code.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 288px;
+  height: 288px;
+  margin: 1rem 1rem 0;
+  border-radius: 10px;
+}
+
+/* select the container with 'id=description-container' that contains the description for the component*/
+/* container will set the 'heading' and 'text' in a vertical layout setting the 'display' property to 'flex' */
+section#description-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.75rem;
+  margin: 0 auto;
+  text-align: center;
+  font-size: initial;
+  row-gap: 1rem;
+}
+
+/* styling the header of the component */
+h4.text-heading {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--dark-blue);
+}
+
+/* styling the description of the component */
+p.text-description {
+  font-size: 0.9375rem;
+  color: var(--grayish-blue);
+}
+
+/* styling the footer */
+#footer-container {
+  position: fixed;
+  bottom: 0;
+  background-color: var(--white);
+  color: var(--dark-blue);
+  width: 100%;
+  height: 2.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.25rem;
+}
+
+/* style the footer */
+#footer-container>p { 
+  font-size: 11px; 
+}
+#footer-container a { 
+  color: hsl(228, 45%, 44%); 
+}
+#footer-container a:visited {
+  color: hsl(228, 45%, 44%);
+}
